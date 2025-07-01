@@ -1,66 +1,87 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+1. Giới thiệu dự án
+   
+1.1. Tên dự án
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Tên dự án: Đánh giá và kiểm định chất lượng trang web thương mại điện tử Egagear
 
-## About Laravel
+1.2. Mô tả
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Dự án tập trung vào việc đánh giá và kiểm định chất lượng phần mềm cho website thương mại điện tử Egagear – một nền tảng cho phép người dùng tìm kiếm sản phẩm, đặt hàng và thanh toán trực tuyến. Nhóm đã áp dụng các kỹ thuật kiểm thử như kiểm thử hộp đen, hộp trắng, kiểm thử chức năng, kiểm thử hiệu năng và kiểm thử tự động với Selenium/JMeter nhằm đánh giá tính đúng đắn, hiệu suất, mức độ ổn định và khả năng sử dụng của hệ thống.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Mục tiêu của dự án là phát hiện và khắc phục các lỗi tiềm ẩn trong hệ thống, đồng thời đề xuất các cải tiến giúp website hoạt động ổn định hơn, thân thiện hơn với người dùng và đáp ứng tốt hơn nhu cầu mua sắm trực tuyến.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1.3. Mục tiêu kiểm thử
 
-## Learning Laravel
+Các mục tiêu chính của quá trình kiểm thử bao gồm:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Xác minh chức năng: Kiểm tra tính đúng đắn của các chức năng chính như: đăng ký, đăng nhập, tìm kiếm sản phẩm, thêm vào giỏ hàng, thanh toán, và cập nhật hồ sơ cá nhân.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Kiểm tra hiệu suất: Đánh giá khả năng đáp ứng và tốc độ xử lý của hệ thống trong điều kiện người dùng truy cập đồng thời bằng công cụ JMeter.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Đảm bảo khả năng sử dụng (Usability): Kiểm tra mức độ thân thiện và dễ sử dụng của giao diện người dùng, quy trình mua hàng và cập nhật thông tin cá nhân.
 
-## Laravel Sponsors
+Kiểm tra tính tương thích: Đảm bảo giao diện và chức năng hoạt động tốt trên nhiều trình duyệt khác nhau (Chrome, Firefox, Edge) và thiết bị (PC, điện thoại).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Phát hiện lỗi: Ghi nhận các lỗi chức năng, lỗi giao diện và hành vi không mong muốn trong suốt quá trình sử dụng.
 
-### Premium Partners
+Bảo mật cơ bản: Kiểm tra các vấn đề bảo mật ở mức cơ bản như kiểm soát đầu vào, xác thực đăng nhập và ngăn chặn các lỗ hổng phổ biến như XSS, SQL Injection.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+2. Yêu cầu hệ thống
+   
+2.1. Yêu cầu chức năng
+   
+Các chức năng được đưa vào phạm vi kiểm thử bao gồm:
 
-## Contributing
+Đăng ký/Đăng nhập: Cho phép người dùng tạo và đăng nhập tài khoản.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Xem và cập nhật hồ sơ cá nhân: Xem thông tin cá nhân, chỉnh sửa tên, địa chỉ, mật khẩu, ảnh đại diện...
 
-## Code of Conduct
+Tìm kiếm sản phẩm: Tìm kiếm sản phẩm theo từ khóa.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Xem chi tiết sản phẩm: Hiển thị thông tin đầy đủ về sản phẩm được chọn.
 
-## Security Vulnerabilities
+Thêm sản phẩm vào giỏ hàng: Lưu các sản phẩm đã chọn và thao tác thay đổi số lượng/xóa sản phẩm.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Thanh toán: Chọn phương thức thanh toán (ví điện tử hoặc khi nhận hàng), nhập thông tin giao hàng.
 
-## License
+Xem lịch sử đơn hàng: Tra cứu lại các đơn hàng đã thực hiện.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Quản lý (dành cho admin): Quản lý sản phẩm, đơn hàng, danh mục, tài khoản người dùng và thống kê doanh thu.
+
+2.2. Yêu cầu phi chức năng
+Hiệu suất:
+
+Thời gian phản hồi dưới 3 giây khi tải trang.
+
+Hệ thống có thể xử lý tối thiểu 100 người dùng đồng thời mà không bị giảm hiệu năng đáng kể (kiểm thử với JMeter).
+
+Khả năng sử dụng (Usability):
+
+Giao diện đơn giản, trực quan, dễ thao tác.
+
+Quy trình mua hàng rõ ràng, phù hợp với người dùng phổ thông.
+
+Tính tương thích:
+
+Tương thích với các trình duyệt phổ biến: Chrome, Firefox, Edge.
+
+Giao diện responsive, hoạt động tốt trên thiết bị di động.
+
+Độ tin cậy:
+
+Tỷ lệ lỗi trên các chức năng chính dưới 1%.
+
+Hệ thống có khả năng phục hồi trạng thái nếu gặp sự cố trong quá trình thanh toán hoặc nhập liệu.
+
+Bảo mật (cơ bản):
+
+Mã hóa mật khẩu người dùng (sử dụng bcrypt).
+
+Bảo vệ chống lại các lỗi phổ biến như XSS, CSRF thông qua Laravel middleware.
+
+Kiểm soát truy cập phân quyền rõ ràng (người dùng thường và admin).
+
+3. Cài đặt và thiết lập
+4. Cấu trúc dự án
+5. Báo cáo kiểm thử
+
